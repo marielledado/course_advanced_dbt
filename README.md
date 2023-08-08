@@ -114,6 +114,7 @@ Awesome! You are now ready to start the course! 🚀🚀🚀
 
 #### Models
 - The primary key column must have not_null and unique schema tests.
+- No need to apply generic tests for staging models that are `SELECT *` from source with no additional transformations. These fields should have already been tested at the source level.
 - All boolean columns must have an accepted_values schema test. The accepted values are true and false.
 - Columns that contain category values must have an accepted_values schema test.
 - Columns that should never be null must have a not_null schema test.
