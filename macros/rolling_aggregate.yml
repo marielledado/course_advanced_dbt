@@ -1,0 +1,19 @@
+macros:
+- name: rolling_aggregate
+  description: A macro to calculate a rolling aggregate over 7 periods
+  arguments:
+    - name: column_name
+      type: string
+      description: The name of the column you want to aggregate
+    - name: partition_by
+      type: string
+      description: The column(s) to partition the aggregation on
+    - name: order_by
+      type: string
+      description: The column(s) to order the rows for aggregation
+    - name: function_type
+      type: string
+      description: The type of aggregate function to apply (e.g., SUM, AVG, MAX, MIN, etc.)
+    - name: num_window
+      type: integer
+      description: Lookback period. Default is 7 days

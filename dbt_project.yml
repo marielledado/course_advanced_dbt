@@ -18,3 +18,45 @@ packages-install-path: 'dbt_packages'
 clean-targets:
   - "target"
   - "dbt_packages"
+
+seeds:
+  course_advanced_dbt:
+    mrr:
+      +schema: unit_testing
+      +tags: unit_testing
+      unit_test_fct_mrr_expected:
+        +columns_types:
+          SURROGATE_KEY: TEXT
+          DATE_MONTH: DATE
+          USER_ID: INT
+          SUBSCRIPTION_ID: INT
+          STARTS_AT: TIMESTAMP_NTZ
+          ENDS_AT: TIMESTAMP_NTZ
+          PLAN_NAME: TEXT
+          MRR_AMOUNT: INT
+          MRR_CHANGE: INT
+          RETAINED_MRR_AMOUNT: INT
+          PREVIOUS_MONTH_MRR_AMOUNT: INT
+          CHANGE_CATEGORY: INT
+          MONTH_RETAINED_NUMBER: TEXT
+      unit_test_dim_dates:
+        +column_types:
+          CALENDAR_DATE: DATE
+          DATE_WEEK: DATE
+          DATE_MONTH: DATE
+          DATE_QUARTER: DATE
+          DATE_YEAR: DATE
+          DAY_OF_MONTH: INT
+          YEAR_NUM: INT
+          QUARTER_NUM: INT
+          MONTH_NUM: INT
+      unit_test_dim_subscriptions:
+        +column_types:
+          SUBSCRIPTION_ID: INT
+          SUBSCRIPTION_PLAN_ID: INT
+          USER_ID: INT
+          STARTS_AT: TIMESTAMP_NTZ
+          ENDS_AT: TIMESTAMP_NTZ
+          PLAN_NAME: TEXT
+          PRICING: INT
+          BILLING_PERIOD: TEXT
